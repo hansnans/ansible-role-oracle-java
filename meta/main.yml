@@ -1,8 +1,6 @@
 galaxy_info:
   author: hansnans
-  description: 
-	a small role for installing java in /opt/ and setup the alternatives
-	propably will work with most of modern linux OS, but could not check 
+  description: a small role for installing java in /opt/ and setup the alternatives
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
@@ -11,11 +9,11 @@ galaxy_info:
   # Some suggested licenses:
   # - BSD (default)
   # - MIT
-  - GPLv2
+  # - GPLv2
   # - GPLv3
   # - Apache
   # - CC-BY
-  license: license (GPLv2, CC-BY, etc)
+  license: license (GPLv2)
 
   min_ansible_version: 1.2
 
