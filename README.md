@@ -1,22 +1,13 @@
 Role Name
 =========
 
-A brief description of the role goes here.
-
-Requirements
-------------
-
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+This role will download oracle java server jre to /opt/ folder, extract it there and set the alternatives.
 
 Role Variables
 --------------
-
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
-
-Dependencies
-------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+build: the build number of the java version
+version: the java version number (without build)
+file_name: the extracted folder name. Contains Version and build number but the format is different.
 
 Example Playbook
 ----------------
@@ -25,14 +16,15 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - { role: hansnans.oracle-java }
 
 License
 -------
-
-BSD
+OpenGPL
 
 Author Information
 ------------------
+Author of the role: me (hansnans)
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Oracle site cookies found on https://ivan-site.com/2012/05/download-oracle-java-jre-jdk-using-a-script/
+

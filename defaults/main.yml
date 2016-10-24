@@ -1,2 +1,4 @@
----
-# defaults file for oracle-java
+java:
+  build: b15
+  version: 8u112
+  file_name: "1.8.0_112"
