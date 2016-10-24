@@ -1,2 +1,29 @@
 ---
-# tasks file for oracle-java
+# put tasks here
+- name: Download Server JRE
+  uri: 
+    url: http://download.oracle.com/otn-pub/java/jdk/{{java.version}}-{{java.build}}/server-jre-{{java.version}}-linux-x64.tar.gz
+    method: GET
+    return_content: yes
+    HEADER_Cookie: "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie"
+    dest: "/opt/oracle_java.tar.gz"
+  become: true
+
+- name: extract Java files
+  unarchive:
+    copy: no
+    src: "/opt/oracle_java.tar.gz"
+    dest: "/opt/"
+  become: true
+
+- name: Java update alternatives
+  alternatives:
+    link: "/usr/bin/{{ item }}"
+    name: "{{ item }}"
+    path: "/opt/jdk{{ java.file_name }}/bin/{{ item }}"
+    priority: 1
+  with_items:
+    - java
+    - jar
+    - javac
+  become: true
