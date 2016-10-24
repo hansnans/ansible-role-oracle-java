@@ -1,7 +1,10 @@
 Role Name
 =========
 
-This role will download oracle java server jre to /opt/ folder, extract it there and set the alternatives.
+THIS IS NOT A PPA INSTALLATION!!
+This role will download oracle java server jre (tar.gz) to /opt/ folder, extract it there and set the alternatives.
+You can adjust the version in the defaults/main.yml file.
+The tar.gz will be downloaded from original Oracle Server. Because of Licence agreement, you can't directly download the file.For this purpose there is the header cookie.
 
 Role Variables
 --------------
